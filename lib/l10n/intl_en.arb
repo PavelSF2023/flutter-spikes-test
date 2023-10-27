@@ -1,4 +1,6 @@
+
 {
+ "@@locale": "en",
  "full_name_creator": "REPLACE!!! Full name creator",
  "btn_go_to_home_page": "go to home page",
  "load_failed": "Load failed",
@@ -26,5 +28,14 @@
  "empty_therapists": "Unable to find a suitable therapist at the moment",
  "empty_therapists_description": "Try lower criteria \nor try again later",
  "empty_my_therapists": "You don't have any psychologists yet",
- "empty_my_therapists_description": "Sign up for the first session, after that psychologists will be available in this section"
+ "empty_my_therapists_description": "Sign up for the first session, after that psychologists will be available in this section",
+ "close": "Close",
+ "filters": "Filters",
+ "reset": "Reset",
+ "session_cost": "Session Cost",
+ "up_to_2500R": "Up to 2500 ₽̶",
+ "more_than_5000R": "More than 5000 ₽̶",
+ "the_whole_price_range": "The whole price range",
+ "psychologists_age": "Psychologist's Age",
+ "show_psychologists": "Show Psychologists"
 }

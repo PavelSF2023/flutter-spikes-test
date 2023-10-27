@@ -7,13 +7,13 @@ import 'package:flutter_spiks_test/widgets/gap/widgets/gap.dart';
 import 'package:flutter_spiks_test/widgets/widgets/rounded_avatar.dart';
 import 'package:go_router/go_router.dart';
 
-// @TODO доработайте widget при необходимости
-
 class TherapistListItem extends StatelessWidget {
-  const TherapistListItem({required this.therapist, this.discount, super.key});
+  const TherapistListItem({
+    required this.therapist,
+    super.key,
+  });
 
-  final Therapist therapist;
-  final int? discount;
+  final TherapistDetail therapist;
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +25,7 @@ class TherapistListItem extends StatelessWidget {
             context.go('${AppRouter.therapistsListPath}/${therapist.id}'),
         highlightColor: context.scheme.primary.withOpacity(.2),
         child: Container(
-          margin: const EdgeInsets.all(
-            20,
-          ),
+          margin: const EdgeInsets.all(30),
           width: double.infinity,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -47,17 +45,21 @@ class TherapistListItem extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                '${therapist.surname} ${therapist.name}',
+                                '${therapist.name} ${therapist.surname}',
                                 style: context.textTheme.titleLarge,
                                 maxLines: 2,
                               ),
                               const Gap(4),
-                              if (therapist.mainSpecialization != null)
-                                Text(therapist.mainSpecialization!,
-                                  style: context.textTheme.bodySmall,
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
+                              Text(
+                                therapist.mainSpecialization!,
+                                style: context.textTheme.bodySmall,
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              const Gap(4),
+                              Text(
+                                'Возраст - ${therapist.age} лет',
+                              ),
                             ],
                           ),
                         ),
@@ -65,6 +67,42 @@ class TherapistListItem extends StatelessWidget {
                           OutlineIcons.right,
                           color: context.scheme.onBackground,
                           size: 16,
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 8),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          children: [
+                            Row(
+                              children: [
+                                const Icon(
+                                  Icons.business_center,
+                                  color: Color(0xFF38B7FF),
+                                ),
+                                const SizedBox(width: 4),
+                                Text(
+                                  'Опыт работы - ${therapist.experience} лет',
+                                  maxLines: 1,
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Text(
+                              ///Отедяем пробелом последние 3 цифры, если число черырёхзначное
+                              '${therapist.costOfServices.toString().replaceAllMapped(
+                                RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'),
+                                    (Match m) => '${m[1]} ',
+                              )} ₽̶',
+                              style: context.textTheme.titleLarge,
+                              maxLines: 1,
+                            ),
+                          ],
                         ),
                       ],
                     ),

@@ -329,6 +329,96 @@ class S {
       args: [],
     );
   }
+
+  /// `Close`
+  String get close {
+    return Intl.message(
+      'Close',
+      name: 'close',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Filters`
+  String get filters {
+    return Intl.message(
+      'Filters',
+      name: 'filters',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset`
+  String get reset {
+    return Intl.message(
+      'Reset',
+      name: 'reset',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Session Cost`
+  String get session_cost {
+    return Intl.message(
+      'Session Cost',
+      name: 'session_cost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Up to 2500 ₽̶`
+  String get up_to_2500R {
+    return Intl.message(
+      'Up to 2500 ₽̶',
+      name: 'up_to_2500R',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `More than 5000 ₽̶`
+  String get more_than_5000R {
+    return Intl.message(
+      'More than 5000 ₽̶',
+      name: 'more_than_5000R',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The whole price range`
+  String get the_whole_price_range {
+    return Intl.message(
+      'The whole price range',
+      name: 'the_whole_price_range',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Psychologist's Age`
+  String get psychologists_age {
+    return Intl.message(
+      'Psychologist\'s Age',
+      name: 'psychologists_age',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show Psychologists`
+  String get show_psychologists {
+    return Intl.message(
+      'Show Psychologists',
+      name: 'show_psychologists',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

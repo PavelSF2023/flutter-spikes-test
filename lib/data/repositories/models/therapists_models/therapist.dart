@@ -1,22 +1,30 @@
-/// Модель терапевта
-/// Расширьте при необходимости
+/**
+ * Модель терапевта
+ **/
 
 class Therapist {
   final String id;
   final String name;
   final String surname;
-  // avatar url
+  final int age;
+  /// avatar url
   final String? avatar;
-  // главная специализация
+  /// специализация
   final String? mainSpecialization;
-  // годы опыта
+  /// годы опыта
   final int experience;
+  /// стоимость услуг
+  final int costOfServices;
+  final int costOfServicesGroup;
 
   Therapist({
     required this.id,
     required this.name,
     required this.surname,
+    required this.age,
     required this.experience,
+    required this.costOfServices,
+    required this.costOfServicesGroup,
     this.avatar,
     this.mainSpecialization,
   });
